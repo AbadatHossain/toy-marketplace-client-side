@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logImg from "../../assets/login.svg";
+import logImg from "../../assets/login.png";
 
 
 const Login = () => {
