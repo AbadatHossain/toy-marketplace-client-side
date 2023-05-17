@@ -7,13 +7,13 @@ const Login = () => {
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="hero-content flex-col lg:flex-row">
-        <div className="text-center w-1/2">
+        <div className="text-center mr-10 h-1/2 w-1/2">
           
           <img src={logImg} alt="" />
         </div>
         <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-100 w-full">
           <div className="card-body w-full">
-          <h1 className="text-3xl font-bold text-center">Login now!</h1>
+          <h1 className="text-3xl font-bold text-center text-pink-500">Login now!</h1>
             <form>
               <div className="form-control">
                 <label className="label">
@@ -44,14 +44,14 @@ const Login = () => {
               </div>
               <div className="form-control mt-6">
                 <input
-                  className="btn btn-primary"
+                  className="btn btn-accent"
                   type="submit"
                   value="Login"
                 />
               </div>
             </form>
 
-            <p className="my-4 text-center">New to car doctors <Link className="font-bold text-orange-700" to='/signup'>Sign up</Link></p>
+            <p className="my-4 text-center">New to car doctors <Link className="font-bold text-pink-500" to='/signup'>Sign up</Link></p>
           </div>
         </div>
       </div>
