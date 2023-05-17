@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../pages/Home/Home/Home";
+import Login from "../pages/Login/Login";
 
 
 const router = createBrowserRouter([
@@ -16,23 +17,15 @@ const router = createBrowserRouter([
         //   path: 'about',
         //   element: <About></About>
         // },
-        // {
-        //   path:'login',
-        //   element:<Login></Login>
-        // },
-        // {
-        //   path:'signup',
-        //   element:<SignUp></SignUp>
-        // },
-        // {
-        //   path:'checkout/:id',
-        //   element:<CheckOut></CheckOut>,
-        //   loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
-        // },
-        // {
-        //   path:'bookings',
-        //   element: <PrivateRote><Bookings></Bookings></PrivateRote>
-        // }
+        {
+          path:'login',
+          element:<Login></Login>
+        },
+        {
+          path:'signup',
+          element:<SignUp></SignUp>
+        },
+        
       ]
     },
   ]);
