@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.jpg"
+import logo from "../../assets/logo.jpg";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const NavBar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
+
   const navItenms = (
     <>
       <li>
@@ -13,13 +23,24 @@ const NavBar = () => {
       <li>
         <Link to="/blogs">Blogs</Link>
       </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
 
-      
+      {user?.email ? (
+        <>
+          <li>
+            <Link to="/toys">My Toyss</Link>
+          </li>
+          <li>
+            <button onClick={handleLogOut}>Logout</button>
+          </li>
+        </>
+      ) : (
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      )}
     </>
   );
+
   return (
     <div className="navbar bg-pink-500 h-15">
       <div className="navbar-start">
@@ -48,14 +69,13 @@ const NavBar = () => {
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-xl">
-          <img className="w-20 h-15 rounded-2xl" src={logo} alt=""  />
+          <img className="w-20 h-15 rounded-2xl" src={logo} alt="" />
           <p>Toy Marketplace</p>
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItenms}</ul>
       </div>
-      
     </div>
   );
 };
