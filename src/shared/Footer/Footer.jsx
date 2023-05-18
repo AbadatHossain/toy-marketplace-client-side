@@ -3,7 +3,8 @@ import SocialIcon from "./SocialIcon";
 const Footer = () => {
   return (
     <footer>
-      <div className="footer p-10 bg-black text-white">
+      <div>
+        <div className="footer p-10 bg-black text-white">
         <div>
           <img className="w-20 h-25 mb-10 rounded-2xl" src={logo} alt="" />
           <p>
@@ -32,7 +33,11 @@ const Footer = () => {
           <a className="link link-hover">Privacy policy</a>
           <a className="link link-hover">Cookie policy</a>
         </div>
-        <SocialIcon></SocialIcon>
+        <div>
+            <SocialIcon></SocialIcon>
+        </div>
+        
+      </div>
       </div>
       <p className="bg-black text-white text-center">
         © 2023 Good Dolls. All rights reserved.{" "}
