@@ -1,7 +1,10 @@
 import toy1 from "../../../assets/toy1.png";
-import toy2 from "../../../assets/toy1.png";
-import toy3 from "../../../assets/toy1.png";
-import toy4 from "../../../assets/toy1.png";
+import toy2 from "../../../assets/toy2.png";
+import toy3 from "../../../assets/toy3.png";
+import toy4 from "../../../assets/toy4.png";
+import Gallery from "../Home/Gallery";
+
+
 
 const Banner = () => {
   return (
@@ -122,6 +125,9 @@ const Banner = () => {
           </a>
         </div>
       </div>
+
+<Gallery></Gallery>
+  
     </div>
   );
 };
