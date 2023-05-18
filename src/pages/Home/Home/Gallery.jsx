@@ -8,8 +8,8 @@ import gallery6 from "../../../assets/gallery/gallery6.jpg"
 
 const Gallery = () => {
     return (
-        <div >
-            <h1 className="text-3xl text-center font-bold m-5">Dolls Photo Gallery</h1>
+        <div>
+            <h1 className="text-3xl text-center font-bold">Dolls Photo Gallery</h1>
             <p className="text-center mb-5">(Feminist Play)</p>
                 <div className="flex justify-center mx-auto ">
                 <div className="grid sm:grid-cols-1 lg:grid-cols-3">

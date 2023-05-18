@@ -3,9 +3,6 @@ import NavBar from "../shared/NavBar/NavBar";
 import Footer from "../shared/Footer/Footer";
 
 
-
-
-
 const Main = () => {
     return (
         <div>
@@ -13,7 +10,6 @@ const Main = () => {
             <Outlet></Outlet>
             <Footer></Footer>
            
-       
         </div>
     );
 };

@@ -27,10 +27,17 @@ const NavBar = () => {
       {user?.email ? (
         <>
           <li>
-            <Link to="/toys">My Toyss</Link>
+            <Link to="/toys">My Toys</Link>
           </li>
           <li>
-            <button onClick={handleLogOut}>Logout</button>
+            <button onClick={handleLogOut}>
+              Logout {user?.name}
+              <div className="avatar w-10 h-10">
+                <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                </div>
+              </div>
+            </button>
           </li>
         </>
       ) : (
@@ -69,7 +76,7 @@ const NavBar = () => {
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-xl">
-          <img className="w-20 h-15 rounded-2xl" src={logo} alt="" />
+          <img className="w-20 h-15 rounded-2xl mr-3" src={logo} alt="" />
           <p>Toy Marketplace</p>
         </a>
       </div>

@@ -8,7 +8,7 @@ import Gallery from "../Home/Gallery";
 
 const Banner = () => {
   return (
-    <div className="carousel w-full h-[600px]">
+    <div className="carousel w-full h-[950px]">
       <div id="slide4" className="carousel-item relative w-full">
         <img src={toy1} className="w-full" />
         <div className="absolute flex items-center h-full left-0  top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">

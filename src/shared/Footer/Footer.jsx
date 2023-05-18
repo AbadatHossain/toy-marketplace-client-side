@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/logo.jpg";
 import SocialIcon from "./SocialIcon";
 const Footer = () => {
@@ -22,10 +23,10 @@ const Footer = () => {
         </div>
         <div>
           <span className="footer-title">Company</span>
-          <a className="link link-hover">Home</a>
-          <a className="link link-hover">Contact</a>
-          <a className="link link-hover">All Toys</a>
-          <a className="link link-hover">Press kit</a>
+          <Link to='/' className="link link-hover">Home</Link>
+          <Link to='/contact' className="link link-hover">Contact</Link>
+          <Link to='/alltoys' className="link link-hover">All Toys</Link>
+          
         </div>
         <div>
           <span className="footer-title">Legal</span>
