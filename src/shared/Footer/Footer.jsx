@@ -35,7 +35,7 @@ const Footer = () => {
         <SocialIcon></SocialIcon>
       </div>
       <p className="bg-black text-white text-center">
-        © 2023 Good Sports. All rights reserved.{" "}
+        © 2023 Good Dolls. All rights reserved.{" "}
       </p>
     </footer>
   );
