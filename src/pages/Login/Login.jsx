@@ -3,6 +3,8 @@ import logImg from "../../assets/login.png";
 
 
 const Login = () => {
+
+    
    
   return (
     <div className="hero min-h-screen bg-base-200">
