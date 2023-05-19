@@ -1,5 +1,6 @@
 import Banner from "../Banner/Banner";
-import TabsInfo from "../Tabs/TabsInfo";
+// import TabCard from "../Tabs/TabCard";
+// import TabsInfo from "../Tabs/TabsInfo";
 import Gallery from "./Gallery";
 import StatSection from "./StatSection";
 
@@ -11,7 +12,8 @@ const Home = () => {
       {/* for gallery section */}
       <Gallery></Gallery>
 
-      <TabsInfo></TabsInfo>
+      {/* <TabsInfo></TabsInfo>
+      <TabCard></TabCard> */}
 
       {/* for stat section */}
       <StatSection></StatSection>

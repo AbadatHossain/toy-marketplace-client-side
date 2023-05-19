@@ -18,10 +18,13 @@ const NavBar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/alltoys">All Toys</Link>
+        <Link to="/addtoys">Post Toys</Link>
       </li>
       <li>
         <Link to="/blogs">Blogs</Link>
+      </li>
+      <li>
+        <Link to="/toys">All Toys</Link>
       </li>
 
       {user?.email ? (

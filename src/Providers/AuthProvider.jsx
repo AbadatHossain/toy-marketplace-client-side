@@ -27,7 +27,7 @@ const AuthProvider = ({children}) => {
     useEffect(()=>{
         const UnsubsCribe = onAuthStateChanged(auth, currentUseer =>{
             setUser(currentUseer)
-            console.log(currentUseer)
+            // console.log(currentUseer)
             setLoading(false)
         })
         return ()=>{
