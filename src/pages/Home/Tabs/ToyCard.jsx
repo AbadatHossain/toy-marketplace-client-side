@@ -34,7 +34,8 @@ const ToyCard = () => {
               <th>Toy Name</th>
               <th>Seller Name</th>
               <th>Price</th>
-             
+              <th>Available Quantity</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
