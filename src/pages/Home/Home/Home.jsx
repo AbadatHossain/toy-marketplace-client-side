@@ -1,8 +1,8 @@
+import CategoryTab from "../../CategoryTab/CategoryTab";
 import Banner from "../Banner/Banner";
-// import TabCard from "../Tabs/TabCard";
-// import TabsInfo from "../Tabs/TabsInfo";
 import Gallery from "./Gallery";
 import StatSection from "./StatSection";
+import AosComp from "../../Aos/AosComp";
 
 const Home = () => {
   return (
@@ -11,10 +11,11 @@ const Home = () => {
 
       {/* for gallery section */}
       <Gallery></Gallery>
+      <AosComp></AosComp>
 
-      {/* <TabsInfo></TabsInfo>
-      <TabCard></TabCard> */}
 
+      <CategoryTab></CategoryTab>
+      
       {/* for stat section */}
       <StatSection></StatSection>
     </div>

@@ -17,9 +17,9 @@ const NavBar = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
-      <li>
-        <Link to="/addtoys">Post Toys</Link>
-      </li>
+      {/* <li>
+        <Link to="/addtoys">Add a Toys</Link>
+      </li> */}
       <li>
         <Link to="/blogs">Blogs</Link>
       </li>
@@ -32,6 +32,10 @@ const NavBar = () => {
           <li>
             <Link to="/toys">My Toys</Link>
           </li>
+
+          <li>
+        <Link to="/addtoys">Add a Toys</Link>
+      </li>
           <li>
             <button onClick={handleLogOut}>
               Logout {user?.name}

@@ -7,6 +7,8 @@ import SignUp from "../pages/SignUp/SignUp";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import Blogs from "../pages/Blogs/Blogs";
 import ToyCard from "../pages/Home/Tabs/ToyCard";
+import UpdateToy from "../pages/UpdatedToy/UpdateToy";
+import DollDetails from "../pages/CategoryTab/DollDetails";
 
 
 
@@ -42,8 +44,23 @@ const router = createBrowserRouter([
         {
           path:'addtoys',
           element:<AddToy></AddToy>,
-        //   loader:()=>fetch('http://localhost:5000/alltoys')
+        
         },
+        {
+            path: 'updatetoy/:id', 
+            element: <UpdateToy></UpdateToy>, 
+            loader: ({params}) => fetch(`http://localhost:5000/toy/${params.id}`)
+          },
+        {
+            path: 'singletoy',
+            element: <DollDetails></DollDetails>
+           
+        },
+        {
+            path: 'toy/:id', 
+            element: <ToyCard></ToyCard>, 
+            loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+          },
        
         
         

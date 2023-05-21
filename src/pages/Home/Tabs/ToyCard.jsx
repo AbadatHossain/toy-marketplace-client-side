@@ -22,14 +22,20 @@ const ToyCard = () => {
 
   return (
     <div>
-      <h1>{toys.length}</h1>
+      <label className="label">
+        <span className="label-text font-bold">Search</span>
+      </label>
+      <input
+        type="text"
+        placeholder="Type here"
+        className="input input-bordered w-full max-w-xs mb-5"
+      />
 
       <div className="overflow-x-auto w-full">
         <table className="table w-full">
           {/* head */}
           <thead>
             <tr>
-              <th></th>
               <th>Image</th>
               <th>Toy Name</th>
               <th>Seller Name</th>

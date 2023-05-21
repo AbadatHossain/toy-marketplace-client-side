@@ -1,8 +1,11 @@
-const ToyRow = ({ toy, handleDelete }) => {
+const ToyRow = ({ toy, handleDelete,handleUpdate }) => {
   const { _id, name, sellername, price, availabequantity, pictureurl } = toy;
+  
+
   return (
+    
     <tr>
-      <th></th>
+     
       <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">
@@ -37,6 +40,7 @@ const ToyRow = ({ toy, handleDelete }) => {
             />
           </svg>
         </button>
+        <button onClick={()=>handleUpdate(_id)}>Edit</button>
       </td>
 
     </tr>

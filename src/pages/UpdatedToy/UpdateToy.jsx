@@ -1,51 +1,79 @@
-const AddToy = () => {
-  const handleAdd = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const name = form.name.value;
-    const sellername = form.sellername.value;
-    const selleremail = form.selleremail.value;
-    const price = form.price.value;
-    const rating = form.rating.value;
-    const availabequantity = form.availabequantity.value;
-    const description = form.description.value;
-    const subcategory = form.subcategory.value;
-    const pictureurl = form.pictureurl.value;
+import { useLoaderData } from "react-router-dom";
 
-    // const password = form.password.value
-    const toys = {
-      name,
-      sellername,
-      selleremail,
-      price,
-      rating,
-      availabequantity,
-      description,
-      subcategory,
-      pictureurl,
-    };
-    console.log(toys);
 
-    fetch(`http://localhost:5000/addtoys`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(toys),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.insertedId) {
-          alert("Toys book successfully");
-        }
-      });
-  };
-  return (
-    <div className="  bg-base-200">
+
+const UpdateToy = () => {
+  const toy = useLoaderData()
+  const {
+    name,
+    sellername,
+    selleremail,
+    price,
+    rating,
+    availabequantity,
+    description,
+    subcategory,
+    pictureurl,
+  } = toy;
+
+    const handleUpdate = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const sellername = form.sellername.value;
+        const selleremail = form.selleremail.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const availabequantity = form.availabequantity.value;
+        const description = form.description.value;
+        const subcategory = form.subcategory.value;
+        const pictureurl = form.pictureurl.value;
+    
+        // const password = form.password.value
+        const toys = {
+          name,
+          sellername,
+          selleremail,
+          price,
+          rating,
+          availabequantity,
+          description,
+          subcategory,
+          pictureurl,
+        };
+        console.log(toys);
+    
+
+        fetch(`http://localhost:5000/toy/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({ status: 'confirm' })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    // if (data.modifiedCount > 0) {
+                    //     // update state
+                    //     const remaining = toys.filter(toy => toy._id !== id);
+                    //     const updated = toys.find(toy => toy._id === id);
+                    //     updated.status = 'confirm'
+                    //     const newToys = [updated, ...remaining];
+                    //     setToys(newToys);
+                    // }
+                    if(data.modifiedCount > 0){
+                        alert('Updated successfully')
+                    }
+                })
+            }
+        
+    
+    return (
+        <div className="  bg-base-200">
       <h1 className="text-3xl font-bold text-center text-pink-500">Add Toy!</h1>
       <div className="flex-col lg:flex-row px-3">
-        <form onSubmit={handleAdd} className="grid grid-cols-2 w-auto gap-4">
+        <form onSubmit={handleUpdate} className="grid grid-cols-2 w-auto gap-4">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
@@ -54,6 +82,7 @@ const AddToy = () => {
               type="text"
               name="name"
               placeholder="name"
+              defaultValue={name}
               className="input input-bordered"
             />
           </div>
@@ -64,6 +93,7 @@ const AddToy = () => {
             <input
               type="text"
               name="sellername"
+              defaultValue={sellername}
               placeholder="sellername"
               className="input input-bordered"
             />
@@ -76,6 +106,7 @@ const AddToy = () => {
             <input
               type="text"
               name="selleremail"
+              defaultValue={selleremail}
               placeholder="selleremail"
               className="input input-bordered"
             />
@@ -89,6 +120,7 @@ const AddToy = () => {
               type="number"
               name="price"
               placeholder="price"
+              defaultValue={price}
               className="input input-bordered"
             />
           </div>
@@ -100,6 +132,7 @@ const AddToy = () => {
               type="number"
               name="rating"
               placeholder="rating"
+              defaultValue={rating}
               className="input input-bordered"
             />
           </div>
@@ -117,11 +150,13 @@ const AddToy = () => {
           <div className="form-control">
             <label className="label">
               <span className="label-text">Description</span>
+
             </label>
             <input
               type="text"
               name="description"
               placeholder="description"
+              defaultValue={description}
               className="input input-bordered"
             />
           </div>
@@ -137,7 +172,7 @@ const AddToy = () => {
             />
           </div>
 
-          <div className="form-control">
+          {/* <div className="form-control">
             <label className="label">
               <span className="label-text">Subcategory</span>
             </label>
@@ -151,7 +186,7 @@ const AddToy = () => {
             </select>
 
             
-          </div>
+          </div> */}
           <div className="form-control mb-3">
             <label className="label">
               <span className="label-text">pictureurl</span>
@@ -160,6 +195,7 @@ const AddToy = () => {
               type="text"
               name="pictureurl"
               placeholder="pictureurl"
+              defaultValue={pictureurl}
               className="input input-bordered"
             />
           </div>
@@ -169,9 +205,7 @@ const AddToy = () => {
         </form>
       </div>
     </div>
-    //   </div>
-    //   </div>
-  );
+    );
 };
 
-export default AddToy;
+export default UpdateToy;
