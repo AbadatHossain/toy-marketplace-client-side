@@ -10,8 +10,10 @@ import {
   GithubAuthProvider,
 } from "firebase/auth";
 import app from "../../firebase/firebase.Config";
+import useTitle from "../hooks/UseTitle";
 
 const Login = () => {
+    useTitle('Login')
   const navigate = useNavigate();
   const { signIn } = useContext(AuthContext);
   const [error, setError] = useState(null);
