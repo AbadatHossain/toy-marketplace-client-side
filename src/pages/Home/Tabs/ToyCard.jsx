@@ -7,7 +7,7 @@ const ToyCard = () => {
   const handleDelete = (id) => {
     const proceed = confirm("Are you sure to delete");
     if (proceed) {
-      fetch(`http://localhost:5000/toys/${id}`, {
+      fetch(`https://toy-marketplace-server-three.vercel.app/toys/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

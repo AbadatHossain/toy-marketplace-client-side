@@ -4,7 +4,7 @@ import { useEffect } from "react";
 const DollDetails = (id) => {
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/toy/${id}`)
+        fetch(`https://toy-marketplace-server-three.vercel.app/toy/${id}`)
         .then(res =>res.json())
         .then(data => console.log(data))
     },[])

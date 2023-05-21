@@ -11,7 +11,7 @@ const CategoryTab = () => {
   console.log(toys);
 
   useEffect(() => {
-    fetch("http://localhost:5000/toys")
+    fetch("https://toy-marketplace-server-three.vercel.app/toys")
       .then((res) => {
         return res
           .json()
