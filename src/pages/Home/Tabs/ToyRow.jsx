@@ -1,11 +1,10 @@
-const ToyRow = ({ toy, handleDelete,handleUpdate }) => {
-  const { _id, name, sellername, price, availabequantity, pictureurl } = toy;
-  
+import { Link } from "react-router-dom";
+
+const ToyRow = ({ toy, handleDelete }) => {
+  const { _id, name, selleremail, price, availabequantity, pictureurl } = toy;
 
   return (
-    
     <tr>
-     
       <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">
@@ -16,33 +15,21 @@ const ToyRow = ({ toy, handleDelete,handleUpdate }) => {
         </div>
       </td>
       <td>{name}</td>
-      <td>{sellername}</td>
+      <td>{selleremail}</td>
       <td>{price}</td>
       <td>{availabequantity}</td>
       <td>
         {" "}
         <button
           onClick={() => handleDelete(_id)}
-          className="btn btn-sm btn-circle"
+          className="mr-5 bg-pink-500 border-2 p-1"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
+          Delete
         </button>
-        <button onClick={()=>handleUpdate(_id)}>Edit</button>
+        <Link to={`/update/${toy._id}`}>
+          <button className=" bg-pink-500 border-2 p-1 ">Update</button>
+        </Link>
       </td>
-
     </tr>
   );
 };

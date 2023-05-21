@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 
 
-const DollDetails = () => {
+const DollDetails = (id) => {
+
     useEffect(()=>{
-        fetch(`http://localhost:5000/toys/${id}`)
+        fetch(`http://localhost:5000/toy/${id}`)
         .then(res =>res.json())
         .then(data => console.log(data))
     },[])

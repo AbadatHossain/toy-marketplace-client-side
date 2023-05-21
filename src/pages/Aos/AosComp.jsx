@@ -1,19 +1,18 @@
-import 'aos';
-import "aos/dist/aos.css"
+import "aos";
+import "aos/dist/aos.css";
 import AOS from "aos";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
- const AosComp = ()=> {
-
-  useEffect(()=>{
+const AosComp = () => {
+  useEffect(() => {
     AOS.init();
     AOS.refresh();
-  },[])
-
-;
+  }, []);
 
   return (
-    <div className='text-pink-500 border-2 text-center' data-aos="fade-up">Subscribes Please!</div>
+    <div className="text-pink-500 border-2 text-center" data-aos="fade-up">
+      Subscribes Please!
+    </div>
   );
-}
+};
 export default AosComp;

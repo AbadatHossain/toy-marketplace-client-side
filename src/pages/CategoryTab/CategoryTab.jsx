@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
@@ -39,65 +40,66 @@ const CategoryTab = () => {
 
         <TabPanel>
           <div className="flex gap-5">
-            {toys.filter(toy => toy.subcategory === "Baby Dolls").map((toy) => (
+            {toys
+              .filter((toy) => toy.subcategory === "Baby dolls")
+              .map((toy) => (
                 <div key={toy._id} className="card w-96 bg-base-100 shadow-xl">
                   <figure>
-                    <img
-                      src={toy.pictureurl}
-                      alt={toy.name}
-                    />
+                    <img src={toy.pictureurl} alt={toy.name} />
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title">{toy.name}</h2>
+                    <p>Rating:{toy.rating}</p>
                     <p>{toy.description}</p>
-                    <div className="card-actions justify-end">
-                        <a href={"/product/" + toy._id} className="btn btn-primary">View Dtails</a>
-                    </div>
+                
+                    <Link to={`/toys`}>
+                      <button className="btn btn-primary">View Dtails</button>
+                    </Link>
                   </div>
                 </div>
-            ))}
+              ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="flex gap-5">
-            {toys.filter(toy => toy.subcategory === "Barbie").map((toy) => (
+            {toys
+              .filter((toy) => toy.subcategory === "Barbie")
+              .map((toy) => (
                 <div key={toy._id} className="card w-96 bg-base-100 shadow-xl">
                   <figure>
-                    <img
-                      src={toy.pictureurl}
-                      alt={toy.name}
-                    />
+                    <img src={toy.pictureurl} alt={toy.name} />
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title">{toy.name}</h2>
+                    <p>Rating:{toy.rating}</p>
                     <p>{toy.description}</p>
-                    <div className="card-actions justify-end">
-                        <a href={"/product/" + toy._id} className="btn btn-primary">View Dtails</a>
-                    </div>
+                    <Link to={`/toys`}>
+                      <button className="btn btn-primary">View Dtails</button>
+                    </Link>
                   </div>
                 </div>
-            ))}
+              ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="flex gap-5">
-            {toys.filter(toy => toy.subcategory === "American girl").map((toy) => (
+            {toys
+              .filter((toy) => toy.subcategory === "American girl")
+              .map((toy) => (
                 <div key={toy._id} className="card w-96 bg-base-100 shadow-xl">
                   <figure>
-                    <img
-                      src={toy.pictureurl}
-                      alt={toy.name}
-                    />
+                    <img src={toy.pictureurl} alt={toy.name} />
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title">{toy.name}</h2>
+                    <p>Rating:{toy.rating}</p>
                     <p>{toy.description}</p>
-                    <div className="card-actions justify-end">
-                      <a href={"/product/" + toy._id} className="btn btn-primary">View Dtails</a>
-                    </div>
+                    <Link to={`/toys`}>
+                      <button className="btn btn-primary">View Dtails</button>
+                    </Link>
                   </div>
                 </div>
-            ))}
+              ))}
           </div>
         </TabPanel>
       </Tabs>

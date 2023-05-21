@@ -12,7 +12,6 @@ const AddToy = () => {
     const subcategory = form.subcategory.value;
     const pictureurl = form.pictureurl.value;
 
-    // const password = form.password.value
     const toys = {
       name,
       sellername,
@@ -130,17 +129,6 @@ const AddToy = () => {
             <label className="label">
               <span className="label-text">Subcategory</span>
             </label>
-            <input
-              type="text"
-              placeholder="subcategory"
-              className="input input-bordered"
-            />
-          </div>
-
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text">Subcategory</span>
-            </label>
             <select className="select select-bordered " name="subcategory">
               <option disabled selected>
                 Subcategory
@@ -149,8 +137,6 @@ const AddToy = () => {
               <option>Barbie</option>
               <option>American girl</option>
             </select>
-
-            
           </div>
           <div className="form-control mb-3">
             <label className="label">

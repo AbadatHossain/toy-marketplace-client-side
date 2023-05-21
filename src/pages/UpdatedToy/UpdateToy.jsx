@@ -1,9 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 
-
-
 const UpdateToy = () => {
-  const toy = useLoaderData()
+  const toy = useLoaderData();
   const {
     name,
     sellername,
@@ -16,61 +14,50 @@ const UpdateToy = () => {
     pictureurl,
   } = toy;
 
-    const handleUpdate = (event) => {
-        event.preventDefault();
-        const form = event.target;
-        const name = form.name.value;
-        const sellername = form.sellername.value;
-        const selleremail = form.selleremail.value;
-        const price = form.price.value;
-        const rating = form.rating.value;
-        const availabequantity = form.availabequantity.value;
-        const description = form.description.value;
-        const subcategory = form.subcategory.value;
-        const pictureurl = form.pictureurl.value;
-    
-        // const password = form.password.value
-        const toys = {
-          name,
-          sellername,
-          selleremail,
-          price,
-          rating,
-          availabequantity,
-          description,
-          subcategory,
-          pictureurl,
-        };
-        console.log(toys);
-    
+  const handleUpdate = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const sellername = form.sellername.value;
+    const selleremail = form.selleremail.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const availabequantity = form.availabequantity.value;
+    const description = form.description.value;
+    const subcategory = form.subcategory.value;
+    const pictureurl = form.pictureurl.value;
 
-        fetch(`http://localhost:5000/toy/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify({ status: 'confirm' })
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    // if (data.modifiedCount > 0) {
-                    //     // update state
-                    //     const remaining = toys.filter(toy => toy._id !== id);
-                    //     const updated = toys.find(toy => toy._id === id);
-                    //     updated.status = 'confirm'
-                    //     const newToys = [updated, ...remaining];
-                    //     setToys(newToys);
-                    // }
-                    if(data.modifiedCount > 0){
-                        alert('Updated successfully')
-                    }
-                })
-            }
-        
-    
-    return (
-        <div className="  bg-base-200">
+    // const password = form.password.value
+    const updatedToy = {
+      name,
+      sellername,
+      selleremail,
+      price,
+      rating,
+      availabequantity,
+      description,
+      subcategory,
+      pictureurl,
+    };
+    console.log(updatedToy);
+
+    fetch(`http://localhost:5000/toys/${toy._id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedToy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.modifiedCount > 0) {
+          alert("Updated successfully");
+        }
+      });
+  };
+
+  return (
+    <div className="  bg-base-200">
       <h1 className="text-3xl font-bold text-center text-pink-500">Add Toy!</h1>
       <div className="flex-col lg:flex-row px-3">
         <form onSubmit={handleUpdate} className="grid grid-cols-2 w-auto gap-4">
@@ -143,6 +130,7 @@ const UpdateToy = () => {
             <input
               type="number"
               name="availabequantity"
+              defaultValue={availabequantity}
               placeholder="availabequantity"
               className="input input-bordered"
             />
@@ -150,7 +138,6 @@ const UpdateToy = () => {
           <div className="form-control">
             <label className="label">
               <span className="label-text">Description</span>
-
             </label>
             <input
               type="text"
@@ -165,18 +152,11 @@ const UpdateToy = () => {
             <label className="label">
               <span className="label-text">Subcategory</span>
             </label>
-            <input
-              type="text"
-              placeholder="subcategory"
-              className="input input-bordered"
-            />
-          </div>
-
-          {/* <div className="form-control">
-            <label className="label">
-              <span className="label-text">Subcategory</span>
-            </label>
-            <select className="select select-bordered " name="subcategory">
+            <select
+              className="select select-bordered "
+              name="subcategory"
+              defaultValue={subcategory}
+            >
               <option disabled selected>
                 Subcategory
               </option>
@@ -184,9 +164,7 @@ const UpdateToy = () => {
               <option>Barbie</option>
               <option>American girl</option>
             </select>
-
-            
-          </div> */}
+          </div>
           <div className="form-control mb-3">
             <label className="label">
               <span className="label-text">pictureurl</span>
@@ -205,7 +183,7 @@ const UpdateToy = () => {
         </form>
       </div>
     </div>
-    );
+  );
 };
 
 export default UpdateToy;
